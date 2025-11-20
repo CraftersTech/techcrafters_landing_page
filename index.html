@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <canvas id="tech-canvas"></canvas>
 
     <!-- Navigation -->
     <header>
@@ -33,7 +34,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Meaning. Focus. <br> <span class="text-gradient">Action.</span></h1>
+            <h1>
+                <span class="reveal-text" style="--delay: 0.1s">Meaning.</span>
+                <span class="reveal-text" style="--delay: 0.3s">Focus.</span> <br>
+                <span class="hero-action" id="action-text" data-value="Action.">Action.</span>
+            </h1>
             <p>El ecosistema definitivo para builders, founders y creadores. Transformamos la ambición en proyectos
                 tangibles y la diversidad en impacto global.</p>
             <div class="hero-cta">
@@ -47,8 +52,8 @@
     <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <h2>Menos ruido, más ejecución.</h2>
-                <p>Un entorno diseñado para quienes entienden que el éxito es un deporte de equipo.</p>
+                <h2>System.optimize("Execution");</h2>
+                <p>Eliminamos la latencia entre tu ambición y tu impacto.</p>
             </div>
 
             <div class="grid">
@@ -59,10 +64,13 @@
                         <span class="dot green"></span>
                     </div>
                     <div class="card-content">
-                        <span class="card-icon">🔥</span>
-                        <h3>Incubación de Alto Rendimiento</h3>
-                        <p>Olvídate de la teoría. Aquí se viene a construir. Hackathones, retos reales y una presión
-                            positiva que te empujará a tu mejor versión.</p>
+                        <span class="card-icon">🚀</span>
+                        <h3>>_ Build Mode: ON</h3>
+                        <p>Aquí no hay espacio para diapositivas vacías ni promesas etéreas. Entras a un entorno de
+                            ejecución implacable donde tu única métrica de éxito es el progreso tangible. Accede a
+                            recursos exclusivos, mentoría técnica de alto nivel y sprints intensivos diseñados
+                            específicamente para transformar un simple 'quizás' en un producto viable que el mercado no
+                            pueda ignorar.</p>
                     </div>
                 </div>
                 <div class="card">
@@ -73,9 +81,12 @@
                     </div>
                     <div class="card-content">
                         <span class="card-icon">⚡</span>
-                        <h3>Sinergia Radical</h3>
-                        <p>Tu red es tu patrimonio. Conecta con el 1% que no solo sueña, sino que ejecuta. Tus próximos
-                            co-founders y aliados están aquí.</p>
+                        <h3>>_ Network Protocol</h3>
+                        <p>El networking tradicional está roto; nosotros lo hemos reescrito. Curamos meticulosamente una
+                            red de alto calibre donde cada interacción suma valor exponencial. Conecta con ingenieros
+                            que han escalado sistemas complejos, fundadores que han levantado capital real y creativos
+                            que entienden tu visión. No buscas contactos en LinkedIn, buscas aliados estratégicos para
+                            construir el futuro.</p>
                     </div>
                 </div>
                 <div class="card">
@@ -86,9 +97,12 @@
                     </div>
                     <div class="card-content">
                         <span class="card-icon">🌍</span>
-                        <h3>Impacto Global</h3>
-                        <p>Creemos en el potencial humano sin etiquetas. Usamos la tecnología para derribar barreras,
-                            crear soluciones con propósito y dejar huella.</p>
+                        <h3>>_ Global Deploy</h3>
+                        <p>La tecnología es nuestra palanca para mover el mundo, y Málaga es solo el punto de partida.
+                            No nos conformamos con crear clones de aplicaciones existentes; buscamos resolver problemas
+                            estructurales. Te damos la plataforma y el alcance global para que tu código tenga
+                            consecuencias reales, escalables y positivas en la vida de las personas, sin importar dónde
+                            se encuentren.</p>
                     </div>
                 </div>
             </div>
@@ -101,7 +115,44 @@
             <div class="cta-box">
                 <h2>Únete a la vanguardia.</h2>
                 <p>Estamos aceptando nuevos miembros. Si eres un builder de corazón, este es tu lugar.</p>
-                <a href="#" class="btn btn-primary">Aplicar ahora</a>
+                <div class="retro-window">
+                    <div class="window-header">
+                        <div class="window-controls">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="window-title">user@techcrafters:~/join</div>
+                    </div>
+                    <div class="window-content">
+                        <form id="join-form" class="join-form" action="https://formspree.io/f/mqanwngn" method="POST">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="> Nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="> Email" required>
+                            </div>
+                            <div class="form-group">
+                                <select id="role" name="role" required>
+                                    <option value="" disabled selected>> Tu Perfil</option>
+                                    <option value="builder">Builder (Dev/Eng)</option>
+                                    <option value="founder">Founder</option>
+                                    <option value="creator">Creator (Design/Content)</option>
+                                    <option value="other">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="url" id="portfolio" name="portfolio"
+                                    placeholder="> LinkedIn / Portfolio / GitHub">
+                            </div>
+                            <div class="form-group">
+                                <textarea id="motivation" name="motivation" rows="3"
+                                    placeholder="> ¿Qué estás construyendo o quieres construir?" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">./enviar_solicitud.sh</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -109,7 +160,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 TechCrafters. Hecho por builders para builders.</p>
+            <p>&copy; 2025 TechCrafters.</p>
         </div>
     </footer>
 
