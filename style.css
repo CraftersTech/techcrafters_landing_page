@@ -508,6 +508,9 @@ nav {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .section-header p {
@@ -822,7 +825,7 @@ footer {
     }
 
     .section-header h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .card h3 {
