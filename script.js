@@ -200,5 +200,30 @@ function initCanvas() {
         requestAnimationFrame(draw);
     }
 
+
     draw();
 }
+
+// Scroll Animation Observer for Manifesto Page
+document.addEventListener('DOMContentLoaded', () => {
+    const fadeInSections = document.querySelectorAll('.fade-in-section');
+
+    if (fadeInSections.length > 0) {
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        fadeInSections.forEach(section => {
+            observer.observe(section);
+        });
+    }
+});
