@@ -22,10 +22,17 @@
                     <div class="logo">TechCrafters<span style="color: var(--accent-primary)">./home</span></div>
                     <div class="sub-logo">{Tech: "<span id="typewriter"></span><span class="cursor">_</span>"}</div>
                 </div>
-                <div class="nav-links">
-                    <a href="manifesto.html">Manifiesto</a>
-                    <a href="#features">Beneficios</a>
-                    <a href="#join" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Unirse</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-links" id="nav-links">
+                    <a href="manifesto.html" data-i18n="nav.manifesto">Manifiesto</a>
+                    <a href="#features" data-i18n="nav.benefits">Beneficios</a>
+                    <a href="#join" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;"
+                        data-i18n="nav.join">Unirse</a>
+                    <button id="lang-toggle" class="lang-toggle">EN</button>
                 </div>
             </nav>
         </div>
@@ -39,11 +46,12 @@
                 <span class="reveal-text" style="--delay: 0.3s">Focus.</span> <br>
                 <span class="hero-action" id="action-text" data-value="Action.">Action.</span>
             </h1>
-            <p>El ecosistema definitivo para builders, founders y creadores. Transformamos la ambición en proyectos
+            <p data-i18n="hero.description">El ecosistema definitivo para builders, founders y creadores. Transformamos
+                la ambición en proyectos
                 tangibles y la diversidad en impacto global.</p>
             <div class="hero-cta">
-                <a href="#join" class="btn btn-primary">Solicitar Acceso</a>
-                <a href="manifesto.html" class="btn btn-secondary">Leer Manifiesto</a>
+                <a href="#join" class="btn btn-primary" data-i18n="hero.cta_primary">Solicitar Acceso</a>
+                <a href="manifesto.html" class="btn btn-secondary" data-i18n="hero.cta_secondary">Leer Manifiesto</a>
             </div>
         </div>
     </section>
@@ -53,7 +61,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>System.optimize("Execution");</h2>
-                <p>Eliminamos la latencia entre tu ambición y tu impacto.</p>
+                <p data-i18n="features.subtitle">Eliminamos la latencia entre tu ambición y tu impacto.</p>
             </div>
 
             <div class="grid">
@@ -66,7 +74,8 @@
                     <div class="card-content">
                         <span class="card-icon">🚀</span>
                         <h3>>_ Build Mode: ON</h3>
-                        <p>Aquí no hay espacio para diapositivas vacías ni promesas etéreas. Entras a un entorno de
+                        <p data-i18n="features.build_mode">Aquí no hay espacio para diapositivas vacías ni promesas
+                            etéreas. Entras a un entorno de
                             ejecución implacable donde tu única métrica de éxito es el progreso tangible. Accede a
                             recursos exclusivos, mentoría técnica de alto nivel y sprints intensivos diseñados
                             específicamente para transformar un simple 'quizás' en un producto viable que el mercado no
@@ -82,7 +91,8 @@
                     <div class="card-content">
                         <span class="card-icon">⚡</span>
                         <h3>>_ Network Protocol</h3>
-                        <p>El networking tradicional está roto; nosotros lo hemos reescrito. Curamos meticulosamente una
+                        <p data-i18n="features.network_protocol">El networking tradicional está roto; nosotros lo hemos
+                            reescrito. Curamos meticulosamente una
                             red de alto calibre donde cada interacción suma valor exponencial. Conecta con ingenieros
                             que han escalado sistemas complejos, fundadores que han levantado capital real y creativos
                             que entienden tu visión. No buscas contactos en LinkedIn, buscas aliados estratégicos para
@@ -98,7 +108,8 @@
                     <div class="card-content">
                         <span class="card-icon">🌍</span>
                         <h3>>_ Global Deploy</h3>
-                        <p>La tecnología es nuestra palanca para mover el mundo, y Málaga es solo el punto de partida.
+                        <p data-i18n="features.global_deploy">La tecnología es nuestra palanca para mover el mundo, y
+                            Málaga es solo el punto de partida.
                             No nos conformamos con crear clones de aplicaciones existentes; buscamos resolver problemas
                             estructurales. Te damos la plataforma y el alcance global para que tu código tenga
                             consecuencias reales, escalables y positivas en la vida de las personas, sin importar dónde
@@ -113,8 +124,9 @@
     <section id="join" class="cta-section">
         <div class="container">
             <div class="cta-box">
-                <h2>Únete a la vanguardia.</h2>
-                <p>Estamos aceptando nuevos miembros. Si eres un builder de corazón, este es tu lugar.</p>
+                <h2 data-i18n="join.title">Únete a la vanguardia.</h2>
+                <p data-i18n="join.subtitle">Estamos aceptando nuevos miembros. Si eres un builder de corazón, este es
+                    tu lugar.</p>
                 <div class="retro-window">
                     <div class="window-header">
                         <div class="window-controls">
@@ -127,27 +139,32 @@
                     <div class="window-content">
                         <form id="join-form" class="join-form" action="https://formspree.io/f/mqanwngn" method="POST">
                             <div class="form-group">
-                                <input type="text" id="name" name="name" placeholder="> Nombre" required>
+                                <input type="text" id="name" name="name" placeholder="> Nombre"
+                                    data-i18n-placeholder="form.name_placeholder" required>
                             </div>
                             <div class="form-group">
-                                <input type="email" id="email" name="email" placeholder="> Email" required>
+                                <input type="email" id="email" name="email" placeholder="> Email"
+                                    data-i18n-placeholder="form.email_placeholder" required>
                             </div>
                             <div class="form-group">
                                 <select id="role" name="role" required>
-                                    <option value="" disabled selected>> Tu Perfil</option>
+                                    <option value="" disabled selected data-i18n="form.role_placeholder">> Tu Perfil
+                                    </option>
                                     <option value="builder">Builder (Dev/Eng)</option>
                                     <option value="founder">Founder</option>
                                     <option value="creator">Creator (Design/Content)</option>
-                                    <option value="other">Otro</option>
+                                    <option value="other" data-i18n="form.role_other">Otro</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <input type="url" id="portfolio" name="portfolio"
-                                    placeholder="> LinkedIn / Portfolio / GitHub">
+                                    placeholder="> LinkedIn / Portfolio / GitHub"
+                                    data-i18n-placeholder="form.portfolio_placeholder">
                             </div>
                             <div class="form-group">
                                 <textarea id="motivation" name="motivation" rows="3"
-                                    placeholder="> ¿Qué estás construyendo o quieres construir?" required></textarea>
+                                    placeholder="> ¿Qué estás construyendo o quieres construir?"
+                                    data-i18n-placeholder="form.motivation_placeholder" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">./enviar_solicitud.sh</button>
                         </form>
@@ -159,8 +176,18 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="container footer-content">
             <p>&copy; 2025 TechCrafters.</p>
+            <a href="https://www.instagram.com/techcrafters__/" target="_blank" rel="noopener noreferrer"
+                class="social-icon" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-instagram">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
         </div>
     </footer>
 

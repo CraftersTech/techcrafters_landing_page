@@ -22,11 +22,17 @@
                                 style="color: var(--accent-primary)">./Manifiesto</span></a></div>
                     <div class="sub-logo">{Tech: "<span id="typewriter"></span><span class="cursor">_</span>"}</div>
                 </div>
-                <div class="nav-links">
-                    <a href="manifesto.html" class="active">Manifiesto</a>
-                    <a href="index.html#features">Beneficios</a>
-                    <a href="index.html#join" class="btn btn-primary"
-                        style="padding: 0.5rem 1rem; font-size: 0.9rem;">Unirse</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-links" id="nav-links">
+                    <a href="manifesto.html" class="active" data-i18n="nav.manifesto">Manifiesto</a>
+                    <a href="index.html#features" data-i18n="nav.benefits">Beneficios</a>
+                    <a href="index.html#join" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;"
+                        data-i18n="nav.join">Unirse</a>
+                    <button id="lang-toggle" class="lang-toggle">EN</button>
                 </div>
             </nav>
         </div>
@@ -35,26 +41,27 @@
     <!-- Hero & Origin Section - Unified -->
     <section class="hero manifesto-hero">
         <div class="container">
-            <h1 class="text-gradient">No construyas solo.</h1>
+            <h1 class="text-gradient" data-i18n="manifesto.title">No construyas solo.</h1>
             <p class="manifesto-intro">
                 "Meaning. Focus. <span class="manifesto-motto">Action.</span>"<br>
-                <span class="manifesto-subtitle">Más que un lema, nuestra forma de operar.</span>
+                <span class="manifesto-subtitle" data-i18n="manifesto.subtitle">Más que un lema, nuestra forma de
+                    operar.</span>
             </p>
 
             <!-- Origin Content -->
             <div class="manifesto-origin" style="margin-top: 120px;">
-                <h2>El Origen</h2>
-                <p class="manifesto-text">
+                <h2 data-i18n="manifesto.origin_title">El Origen</h2>
+                <p class="manifesto-text" data-i18n="manifesto.origin_text_1">
                     Sentíamos que faltaba algo. Un lugar donde la intensidad no asuste, donde "querer cambiar el mundo"
                     no suene a cliché.
                 </p>
-                <p class="manifesto-text">
+                <p class="manifesto-text" data-i18n="manifesto.origin_text_2">
                     TechCrafters nace de esa sed de <strong>hacer</strong>. No somos un grupo social. Somos una
                     <strong>fuerza operativa</strong>.
                     Un espacio seguro donde la curiosidad intelectual se encuentra con la ejecución implacable. Aquí
                     incubamos talento, no egos.
                 </p>
-                <p class="manifesto-text">
+                <p class="manifesto-text" data-i18n="manifesto.origin_text_3">
                     Creemos que la verdadera innovación no pide permiso. En un mundo saturado de ruido, elegimos la
                     claridad del código y la honestidad del diseño. Aquí no vienes a intercambiar tarjetas de visita,
                     vienes a encontrar a los co-autores de tu próxima gran obra. Porque al final del día, lo único que
@@ -68,8 +75,8 @@
     <section class="features manifesto-section fade-in-section">
         <div class="container">
             <div class="section-header">
-                <h2>¿Para quiénes?</h2>
-                <p class="center-text-limited">
+                <h2 data-i18n="manifesto.who_title">¿Para quiénes?</h2>
+                <p class="center-text-limited" data-i18n="manifesto.who_subtitle">
                     Para los inconformistas. Para los que tienen una historia que contar y una visión que construir.
                     Buscamos a quienes usan su ambición como gasolina para generar impacto positivo a través de la
                     tecnología.
@@ -85,7 +92,8 @@
                     <div class="card-content">
                         <span class="card-icon">🏗️</span>
                         <h3>>_ The Builder</h3>
-                        <p>Obsesionado con la calidad del código y la arquitectura elegante. Vives en el editor,
+                        <p data-i18n="manifesto.builder_desc">Obsesionado con la calidad del código y la arquitectura
+                            elegante. Vives en el editor,
                             debuggeas con pasión y buscas la excelencia técnica por encima de todo. Aquí encontrarás
                             otros ingenieros que entienden que cada línea de código es una oportunidad para crear algo
                             extraordinario. No buscas solo escribir software, buscas construir sistemas que importen.
@@ -101,7 +109,8 @@
                     <div class="card-content">
                         <span class="card-icon">👁️</span>
                         <h3>>_ The Founder</h3>
-                        <p>Ves oportunidades donde otros ven caos. Tienes la visión para imaginar el futuro y la
+                        <p data-i18n="manifesto.founder_desc">Ves oportunidades donde otros ven caos. Tienes la visión
+                            para imaginar el futuro y la
                             valentía para construirlo desde cero. Lideras con el ejemplo, tomas decisiones difíciles
                             y sabes que el camino del emprendimiento es solitario hasta que encuentras tu tribu.
                             Aquí conectarás con otros founders que entienden el peso de la responsabilidad y la
@@ -117,7 +126,8 @@
                     <div class="card-content">
                         <span class="card-icon">🚀</span>
                         <h3>>_ The Gamechanger</h3>
-                        <p>Tu perspectiva única y tu historia personal son tu superpoder. Usas tu contexto cultural,
+                        <p data-i18n="manifesto.gamechanger_desc">Tu perspectiva única y tu historia personal son tu
+                            superpoder. Usas tu contexto cultural,
                             tus experiencias y tu visión del mundo para crear soluciones que nadie más podría imaginar.
                             No te conformas con copiar lo que ya existe; quieres revolucionar industrias enteras.
                             TechCrafters es donde tu diversidad se convierte en tu ventaja competitiva y tu voz
@@ -133,16 +143,27 @@
         <div class="container">
             <div class="cta-box">
                 <h2 class="text-gradient">Ready to build?</h2>
-                <p>Tu silla en la mesa está reservada. Solo falta que la tomes.</p>
-                <a href="index.html#join" class="btn btn-primary">Unirse a la comunidad</a>
+                <p data-i18n="manifesto.cta_text">Tu silla en la mesa está reservada. Solo falta que la tomes.</p>
+                <a href="index.html#join" class="btn btn-primary" data-i18n="manifesto.cta_button">Unirse a la
+                    comunidad</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="container footer-content">
             <p>&copy; 2025 TechCrafters.</p>
+            <a href="https://www.instagram.com/techcrafters__/" target="_blank" rel="noopener noreferrer"
+                class="social-icon" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-instagram">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
         </div>
     </footer>
 

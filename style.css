@@ -264,6 +264,59 @@ nav {
     color: white;
 }
 
+/* Language Toggle */
+.lang-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Space Grotesk', monospace;
+}
+
+.lang-toggle:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    background: rgba(245, 158, 11, 0.1);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background-color: var(--accent-primary);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background-color: var(--accent-primary);
+}
+
 /* Hero Section */
 .hero {
     padding: 180px 0 100px;
@@ -713,6 +766,32 @@ footer {
     font-size: 0.9rem;
 }
 
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.social-icon:hover {
+    color: #E1306C;
+    /* Instagram Brand Color */
+    background: rgba(225, 48, 108, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(225, 48, 108, 0.2);
+}
+
 /* Join Form - Retro Window */
 .retro-window {
     max-width: 600px;
@@ -911,7 +990,51 @@ footer {
     }
 
     .nav-links {
-        display: none;
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        gap: 2rem;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+    .nav-links a:hover {
+        color: var(--accent-primary);
+    }
+
+    .nav-links .btn {
+        width: auto;
+        display: inline-flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .lang-toggle {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
     }
 
     .logo {
